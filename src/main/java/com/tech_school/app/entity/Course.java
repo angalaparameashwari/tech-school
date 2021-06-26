@@ -16,18 +16,12 @@ public class Course extends CommonEntities{
     @Column(nullable = false, name = "external_id")
     @Builder.Default
     private String externalId = UUID.randomUUID().toString();
-    private String title;
-    private String description;
-    private String state;
+    @Column(nullable = false, name = "commit_id")
+    private String commitId;
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private Set<AuthorCourse> authorCourses;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<UserCourse> userCourses;
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
-    private Set<CourseCommit> courseCommits;
-//    external_id VARCHAR(250) NOT NULL UNIQUE,
-//    title VARCHAR(500) NOT NULL,
-//    description text NOT NULL,
-//    created_by INT REFERENCES authors(id),
-//    state VARCHAR(250) NOT NULL,
+//    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+//    private Set<CourseCommit> courseCommits;
 }

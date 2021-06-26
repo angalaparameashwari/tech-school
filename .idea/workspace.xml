@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="95763077-19df-4c96-b2c2-3e45d2c9580f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/lessons/CreateLessonApiModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/lessons/LessonApiModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/LessonApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/LessonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/enums/ChangeType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/enums/CourseStates.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/mapper/CommitMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/mapper/LessonMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/services/lessons/LessonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/services/lessons/LessonServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/validators/CommitValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/validators/CourseValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/validators/LessonValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/validators/Validator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QCoursesMaster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QLessonsMaster.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QSectionsMaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/courses/CourseApiModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/courses/CourseApiModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/courses/CreateCourseApiModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/courses/CreateCourseApiModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/sections/CreateSectionApiModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/sections/CreateSectionApiModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/sections/SectionApiModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/sections/SectionApiModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/CourseApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/CourseApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/SectionApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/SectionApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/SectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/SectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/CommitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/CommitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/CourseCommitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/CourseCommitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/CourseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/CourseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/LessonCommitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/LessonCommitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/LessonRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/SectionCommitRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/SectionCommitRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/SectionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/StagedChangesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/Author.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/Commit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/Commit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/CourseCommit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/CourseCommit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/Lesson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/LessonCommit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/LessonCommit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/Section.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/SectionCommit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/SectionCommit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/entity/StagedChanges.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/enums/CommitStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/enums/CommitStates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/enums/TicketPriority.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/mapper/CourseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/mapper/CourseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/mapper/SectionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/mapper/SectionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/mapper/StagedChangesMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/services/courses/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/services/courses/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/services/courses/CourseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/services/courses/CourseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/services/sections/SectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/services/sections/SectionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/validators/SectionValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/validators/SectionValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tech_school/app/validators/predicates/SectionPredicates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tech_school/app/validators/predicates/SectionPredicates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__load_data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/app-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/app-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1__load_data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QAuthor.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QAuthor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QCommit.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QCommit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QCourseCommit.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QCourseCommit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QLesson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QLessonCommit.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QLessonCommit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QSection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QSectionCommit.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QSectionCommit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/java/com/tech_school/app/entity/QStagedChanges.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$USER_HOME$/.m2/wrapper/dists/apache-maven-3.8.1-bin/2l5mhf2pq2clrde7f7qp1rdt5m/apache-maven-3.8.1" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1uGQAWYSQBWTMCkNgOj3zbdUUbL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.tech_school.app.mapper" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.tech_school.app" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tech_school.app.controllers" />
+      <recent name="com.tech_school.app.api_models.lessons" />
+      <recent name="com.tech_school.app.services.lessons" />
+      <recent name="com.tech_school.app.dao.repositories" />
+      <recent name="com.tech_school.app.entity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/tech_school/app/services" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/tech_school/app" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/tech_school/app/api_models/courses" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.AppApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generated-requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="AppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="tech-school" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tech_school.app.TechSchoolApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests#2" />
+        <item itemvalue="HTTP Request.generated-requests#1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="95763077-19df-4c96-b2c2-3e45d2c9580f" name="Default Changelist" comment="" />
+      <created>1624289305397</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624289305397</updated>
+      <workItem from="1624289309607" duration="20402000" />
+      <workItem from="1624385361093" duration="1473000" />
+      <workItem from="1624386925055" duration="4689000" />
+      <workItem from="1624420462032" duration="5262000" />
+      <workItem from="1624427509475" duration="5066000" />
+      <workItem from="1624444146278" duration="3306000" />
+      <workItem from="1624447910300" duration="164000" />
+      <workItem from="1624448086153" duration="2924000" />
+      <workItem from="1624451237582" duration="12592000" />
+      <workItem from="1624555372730" duration="36000" />
+      <workItem from="1624555418389" duration="10000" />
+      <workItem from="1624555453540" duration="14001000" />
+      <workItem from="1624596127157" duration="2101000" />
+      <workItem from="1624641704394" duration="24796000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="583" y="339" key="#Assign_Data_Sources" timestamp="1624694186069">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="583" y="339" key="#Assign_Data_Sources/0.23.1440.877@0.23.1440.877" timestamp="1624694186069" />
+    <state x="180" y="116" width="1181" height="719" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1624555480938">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="180" y="116" width="1181" height="719" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1624555480938" />
+    <state x="486" y="108" key="#com.intellij.ide.util.MemberChooser" timestamp="1624657438960">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="486" y="108" key="#com.intellij.ide.util.MemberChooser/0.23.1440.877@0.23.1440.877" timestamp="1624657438960" />
+    <state x="124" y="380" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1624378103662">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="124" y="380" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1440.877@0.23.1440.877" timestamp="1624378103662" />
+    <state x="444" y="329" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1624378105600">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="444" y="329" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.23.1440.877@0.23.1440.877" timestamp="1624378105600" />
+    <state x="415" y="23" width="554" height="877" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1624589974602">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="415" y="23" width="554" height="877" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.877@0.23.1440.877" timestamp="1624589974602" />
+    <state x="392" y="156" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1624484153156">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="392" y="156" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1624484153156" />
+    <state x="423" y="112" key="#xdebugger.evaluate" timestamp="1624704812693">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="423" y="91" key="#xdebugger.evaluate/0.0.1440.900@0.0.1440.900" timestamp="1624395506321" />
+    <state x="423" y="112" key="#xdebugger.evaluate/0.23.1440.877@0.23.1440.877" timestamp="1624704812693" />
+    <state width="1388" height="321" key="GridCell.Tab.0.bottom" timestamp="1624712077337">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1388" height="262" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1624451226997" />
+    <state width="1388" height="321" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1624712077337" />
+    <state width="1388" height="321" key="GridCell.Tab.0.center" timestamp="1624712077335">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1388" height="262" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1624451226996" />
+    <state width="1388" height="321" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1624712077335" />
+    <state width="1388" height="321" key="GridCell.Tab.0.left" timestamp="1624712077335">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1388" height="262" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1624451226996" />
+    <state width="1388" height="321" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1624712077335" />
+    <state width="1388" height="321" key="GridCell.Tab.0.right" timestamp="1624712077336">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1388" height="262" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1624451226997" />
+    <state width="1388" height="321" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1624712077336" />
+    <state width="1388" height="321" key="GridCell.Tab.1.bottom" timestamp="1624712077339">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1388" height="262" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1624451226999" />
+    <state width="1388" height="321" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1624712077339" />
+    <state width="1388" height="321" key="GridCell.Tab.1.center" timestamp="1624712077338">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1388" height="262" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1624451226998" />
+    <state width="1388" height="321" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1624712077338" />
+    <state width="1388" height="321" key="GridCell.Tab.1.left" timestamp="1624712077337">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1388" height="262" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1624451226997" />
+    <state width="1388" height="321" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1624712077337" />
+    <state width="1388" height="321" key="GridCell.Tab.1.right" timestamp="1624712077338">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1388" height="262" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1624451226998" />
+    <state width="1388" height="321" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1624712077338" />
+    <state x="80" y="23" key="SettingsEditor" timestamp="1624555490629">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="80" y="23" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1624555490629" />
+    <state width="720" height="484" key="XDebugger.FullValuePopup" timestamp="1624704634629">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="720" height="484" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1624704634629" />
+    <state width="720" height="484" key="XDebugger.FullValuePopup/0.23.1440.877@0.23.1440.877" timestamp="1624702655017" />
+    <state x="7" y="134" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1624592500413">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="7" y="134" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1440.877@0.23.1440.877" timestamp="1624592500413" />
+    <state x="347" y="153" width="745" height="616" key="find.popup" timestamp="1624656191559">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="347" y="153" width="745" height="616" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1624656191559" />
+    <state x="301" y="23" width="838" height="1032" key="search.everywhere.popup" timestamp="1624711991958">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="301" y="0" width="838" height="1060" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1624451149332" />
+    <state x="301" y="23" width="838" height="1032" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1624711991958" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tech_school/app/services/users/UserServiceImpl.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tech_school/core/filters/UserFilter.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tech_school/core/security/SecurityConfig.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tech_school/app/controllers/UserController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tech_school/app/validators/SectionValidator.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tech_school/app/validators/SectionValidator.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/UserRepository.java</url>
+          <line>16</line>
+          <properties class="com.tech_school.app.dao.repositories.UserRepository" method="findByGivenId" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tech_school/app/services/courses/CourseService.java</url>
+          <line>10</line>
+          <properties class="com.tech_school.app.services.courses.CourseService" method="create">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tech_school/app/dao/repositories/CourseCommitRepository.java</url>
+          <line>17</line>
+          <properties class="com.tech_school.app.dao.repositories.CourseCommitRepository" method="findByCourseIdAndCommit" />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

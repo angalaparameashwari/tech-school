@@ -22,6 +22,4 @@ public class Author extends CommonEntities {
     private Set<AuthorCourse> authorCourses;
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     private Set<Commit> commits;
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    private Set<StagedChanges> stagedChanges;
 }

@@ -12,23 +12,22 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity(name = "lesson_commits")
 public class LessonCommit extends CommonEntities {
-    @Column(nullable = false)
+    @Column(nullable = false, name = "external_id")
     @Builder.Default
-    private String external_id  = UUID.randomUUID().toString();
+    private String externalId  = UUID.randomUUID().toString();
+    @Column(nullable = false, name = "lesson_id")
+    private String lessonId;
+    @Column(nullable = false, name = "course_id")
+    private String courseId;
+    @Column(nullable = false, name = "section_id")
+    private String sectionId;
     private String title;
     private String description;
     private String url;
     private String type;
-    private String state;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "lesson_id")
-    private Lesson lesson;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "commit_id")
-    private Commit commit;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "staged_id")
-    private StagedChanges stagedChanges;
+    private int state;
+    @Column(nullable = false, name = "commit_id")
+    private String commitId;
 //    id INT AUTO_INCREMENT  PRIMARY KEY,
 //    external_id VARCHAR(250) NOT NULL UNIQUE,
 //    course_id INT REFERENCES courses(id),

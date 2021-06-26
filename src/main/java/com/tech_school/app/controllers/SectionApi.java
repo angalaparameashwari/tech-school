@@ -14,7 +14,7 @@ import java.util.concurrent.Callable;
 
 public interface SectionApi {
 
-    @RequestMapping(value = "/courses",
+    @RequestMapping(value = "/sections",
             produces = {"application/json"},
             consumes = {"application/json"},
             method = RequestMethod.POST)

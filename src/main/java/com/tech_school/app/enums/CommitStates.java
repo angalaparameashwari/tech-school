@@ -3,7 +3,8 @@ package com.tech_school.app.enums;
 public enum CommitStates {
     DRAFT(100, "draft"),
     COMMITED(200, "commited"),
-    MERGED(300, "merged");
+    SAVED(300, "saved"),
+    MERGED(400, "merged");
 
     public final int status;
     public final String name;

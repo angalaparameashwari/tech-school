@@ -21,8 +21,15 @@ public class CreateCourseApiModel extends ApiModel {
     private static final long serialVersionUID = 1L;
 
     @JsonProperty("id")
+    @NotNull(message = "exception.param.notNull")
+    @NotBlank(message = "exception.param.notBlank")
     @Size(max = 500, message = "exception.param.size")
     private String id;
+
+    @JsonProperty("name")
+    @NotNull(message = "exception.param.notNull")
+    @NotBlank(message = "exception.param.notBlank")
+    private String name;
 
     @JsonProperty("title")
     @NotNull(message = "exception.param.notNull")
@@ -34,4 +41,9 @@ public class CreateCourseApiModel extends ApiModel {
     @NotBlank(message = "exception.param.notBlank")
     private String description;
 
+
+    @JsonProperty("author_id")
+    @NotNull(message = "exception.param.notNull")
+    @NotBlank(message = "exception.param.notBlank")
+    private String authorId;
 }

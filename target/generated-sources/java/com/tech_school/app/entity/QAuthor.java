@@ -34,7 +34,7 @@ public class QAuthor extends EntityPathBase<Author> {
 
     public final StringPath email = createString("email");
 
-    public final StringPath external_id = createString("external_id");
+    public final StringPath externalId = createString("externalId");
 
     public final StringPath first_name = createString("first_name");
 
@@ -42,8 +42,6 @@ public class QAuthor extends EntityPathBase<Author> {
     public final NumberPath<Long> id = _super.id;
 
     public final StringPath last_name = createString("last_name");
-
-    public final SetPath<StagedChanges, QStagedChanges> stagedChanges = this.<StagedChanges, QStagedChanges>createSet("stagedChanges", StagedChanges.class, QStagedChanges.class, PathInits.DIRECT2);
 
     //inherited
     public final DateTimePath<java.util.Date> updatedAt = _super.updatedAt;

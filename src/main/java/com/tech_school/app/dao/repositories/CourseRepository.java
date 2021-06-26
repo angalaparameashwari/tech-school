@@ -13,5 +13,6 @@ import java.util.Optional;
 @Repository
 public interface CourseRepository extends CrudRepository<Course, Long>, QuerydslPredicateExecutor<Course> {
         @Query(value = "select * From Courses where external_id = ?1", nativeQuery=true)
-        List<Course> findByGivenId(String id);
+        Optional<Course> findByGivenId(String id);
+
 }

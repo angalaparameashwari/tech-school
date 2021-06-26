@@ -7,7 +7,6 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.Generated;
 import com.querydsl.core.types.Path;
-import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -18,13 +17,13 @@ public class QLessonCommit extends EntityPathBase<LessonCommit> {
 
     private static final long serialVersionUID = 810204655L;
 
-    private static final PathInits INITS = PathInits.DIRECT2;
-
     public static final QLessonCommit lessonCommit = new QLessonCommit("lessonCommit");
 
     public final QCommonEntities _super = new QCommonEntities(this);
 
-    public final QCommit commit;
+    public final StringPath commit_id = createString("commit_id");
+
+    public final StringPath course_id = createString("course_id");
 
     //inherited
     public final DateTimePath<java.util.Date> createdAt = _super.createdAt;
@@ -34,14 +33,14 @@ public class QLessonCommit extends EntityPathBase<LessonCommit> {
 
     public final StringPath description = createString("description");
 
-    public final StringPath external_id = createString("external_id");
+    public final StringPath externalId = createString("externalId");
 
     //inherited
     public final NumberPath<Long> id = _super.id;
 
-    public final QLesson lesson;
+    public final StringPath lessonId = createString("lessonId");
 
-    public final QStagedChanges stagedChanges;
+    public final StringPath session_id = createString("session_id");
 
     public final StringPath state = createString("state");
 
@@ -55,26 +54,15 @@ public class QLessonCommit extends EntityPathBase<LessonCommit> {
     public final StringPath url = createString("url");
 
     public QLessonCommit(String variable) {
-        this(LessonCommit.class, forVariable(variable), INITS);
+        super(LessonCommit.class, forVariable(variable));
     }
 
     public QLessonCommit(Path<? extends LessonCommit> path) {
-        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
+        super(path.getType(), path.getMetadata());
     }
 
     public QLessonCommit(PathMetadata metadata) {
-        this(metadata, PathInits.getFor(metadata, INITS));
-    }
-
-    public QLessonCommit(PathMetadata metadata, PathInits inits) {
-        this(LessonCommit.class, metadata, inits);
-    }
-
-    public QLessonCommit(Class<? extends LessonCommit> type, PathMetadata metadata, PathInits inits) {
-        super(type, metadata, inits);
-        this.commit = inits.isInitialized("commit") ? new QCommit(forProperty("commit"), inits.get("commit")) : null;
-        this.lesson = inits.isInitialized("lesson") ? new QLesson(forProperty("lesson")) : null;
-        this.stagedChanges = inits.isInitialized("stagedChanges") ? new QStagedChanges(forProperty("stagedChanges"), inits.get("stagedChanges")) : null;
+        super(LessonCommit.class, metadata);
     }
 
 }

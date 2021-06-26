@@ -30,11 +30,20 @@ public class CourseController implements CourseApi {
     @Override
     public Callable<ResponseEntity<CourseApiModel>> create(@Valid CreateCourseApiModel body) {
         return () -> {
-            RequestDetails.setCurrentUser("Donna");
-            CourseApiModel courseApiModel = service.create(mapper.createCourseToCourseCommit(body))
-                    .map(courseCommit -> mapper.courseCommitToCourseApiModel(courseCommit))
+            RequestDetails.setCurrentUser(body.getAuthorId());
+            CourseApiModel courseApiModel = service.create(mapper.createCourseToCourseMaster(body))
+                    .map(courseMaster -> mapper.courseMasterToCourseApiModel(courseMaster))
                     .orElseThrow(() -> new GeneralException("Un expected error"));
             return ResponseEntity.status(HttpStatus.CREATED).body(courseApiModel);
         };
     }
+
+//    @Override
+//    public Callable<ResponseEntity<CourseApiModel>> retrieve(String courseId, String authorId) {
+////        return () -> {
+////            RequestDetails.setCurrentUser("authorId");
+////            CourseApiModel courseApiModel = service.merge(courseId,authorId)
+////                    .map()
+////        }
+//    }
 }

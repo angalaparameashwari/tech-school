@@ -26,7 +26,7 @@ public class QCommit extends EntityPathBase<Commit> {
 
     public final QAuthor author;
 
-    public final SetPath<CourseCommit, QCourseCommit> courseCommits = this.<CourseCommit, QCourseCommit>createSet("courseCommits", CourseCommit.class, QCourseCommit.class, PathInits.DIRECT2);
+    public final StringPath courseId = createString("courseId");
 
     //inherited
     public final DateTimePath<java.util.Date> createdAt = _super.createdAt;
@@ -34,18 +34,16 @@ public class QCommit extends EntityPathBase<Commit> {
     //inherited
     public final StringPath deleted = _super.deleted;
 
-    public final StringPath external_id = createString("external_id");
+    public final StringPath externalId = createString("externalId");
 
     //inherited
     public final NumberPath<Long> id = _super.id;
 
-    public final SetPath<LessonCommit, QLessonCommit> lessonCommits = this.<LessonCommit, QLessonCommit>createSet("lessonCommits", LessonCommit.class, QLessonCommit.class, PathInits.DIRECT2);
-
     public final StringPath message = createString("message");
 
-    public final StringPath sate = createString("sate");
+    public final StringPath previous_commit = createString("previous_commit");
 
-    public final SetPath<SectionCommit, QSectionCommit> sectionCommits = this.<SectionCommit, QSectionCommit>createSet("sectionCommits", SectionCommit.class, QSectionCommit.class, PathInits.DIRECT2);
+    public final NumberPath<Integer> state = createNumber("state", Integer.class);
 
     //inherited
     public final DateTimePath<java.util.Date> updatedAt = _super.updatedAt;

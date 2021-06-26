@@ -24,6 +24,11 @@ public class CreateSectionApiModel extends ApiModel {
     @Size(max = 500, message = "exception.param.size")
     private String id;
 
+    @JsonProperty("course_id")
+    @NotNull(message = "exception.param.notNull")
+    @NotBlank(message = "exception.param.notBlank")
+    private String courseId;
+
     @JsonProperty("title")
     @NotNull(message = "exception.param.notNull")
     @NotBlank(message = "exception.param.notBlank")
@@ -33,5 +38,10 @@ public class CreateSectionApiModel extends ApiModel {
     @NotNull(message = "exception.param.notNull")
     @NotBlank(message = "exception.param.notBlank")
     private String description;
+
+    @JsonProperty("author_id")
+    @NotNull(message = "exception.param.notNull")
+    @NotBlank(message = "exception.param.notBlank")
+    private String authorId;
 
 }

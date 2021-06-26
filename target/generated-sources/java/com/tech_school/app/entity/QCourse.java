@@ -24,7 +24,7 @@ public class QCourse extends EntityPathBase<Course> {
 
     public final SetPath<AuthorCourse, QAuthorCourse> authorCourses = this.<AuthorCourse, QAuthorCourse>createSet("authorCourses", AuthorCourse.class, QAuthorCourse.class, PathInits.DIRECT2);
 
-    public final SetPath<CourseCommit, QCourseCommit> courseCommits = this.<CourseCommit, QCourseCommit>createSet("courseCommits", CourseCommit.class, QCourseCommit.class, PathInits.DIRECT2);
+    public final StringPath commitId = createString("commitId");
 
     //inherited
     public final DateTimePath<java.util.Date> createdAt = _super.createdAt;
@@ -32,16 +32,10 @@ public class QCourse extends EntityPathBase<Course> {
     //inherited
     public final StringPath deleted = _super.deleted;
 
-    public final StringPath description = createString("description");
-
     public final StringPath externalId = createString("externalId");
 
     //inherited
     public final NumberPath<Long> id = _super.id;
-
-    public final StringPath state = createString("state");
-
-    public final StringPath title = createString("title");
 
     //inherited
     public final DateTimePath<java.util.Date> updatedAt = _super.updatedAt;

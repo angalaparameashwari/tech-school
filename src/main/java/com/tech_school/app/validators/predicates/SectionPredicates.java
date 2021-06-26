@@ -1,6 +1,5 @@
 package com.tech_school.app.validators.predicates;
 
-import com.tech_school.app.entity.Section;
 import com.tech_school.app.entity.SectionCommit;
 
 import java.util.function.Predicate;

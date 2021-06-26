@@ -1,0 +1,8 @@
+POST http://localhost/courses/{{id}}/merge/{{authorId}}
+
+###
+
+POST http://localhost/outbox_events/search
+
+###
+

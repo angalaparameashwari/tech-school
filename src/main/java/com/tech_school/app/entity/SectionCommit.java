@@ -1,5 +1,6 @@
 package com.tech_school.app.entity;
 
+import com.tech_school.app.mapper.SectionMapper;
 import lombok.*;
 
 import javax.persistence.*;
@@ -15,18 +16,16 @@ public class SectionCommit extends CommonEntities {
     @Column(nullable = false, name = "external_id")
     @Builder.Default
     private String externalId  = UUID.randomUUID().toString();
+    @Column(nullable = false, name = "section_id")
+    private String sectionId;
     private String title;
     private String description;
+    @Column(nullable = false, name = "course_id")
+    private String courseId;
     private int state;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "section_id")
-    private Section section;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "commit_id")
-    private Commit commit;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "staged_id")
-    private StagedChanges stagedChanges;
+    @Column(nullable = false, name = "commit_id")
+    private String commitId;
+
 //    id INT AUTO_INCREMENT  PRIMARY KEY,
 //    external_id VARCHAR(250) NOT NULL UNIQUE,
 //    course_id INT REFERENCES courses(id),
