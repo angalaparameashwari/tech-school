@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "5ac6f823-5098-4444-83b5-222f7f5f92d1",
+		"name": "tech-school",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"a1qwp\",\n    \"title\":\"ap\",\n    \"name\":\"apName\",\n    \"description\":\"apDesc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8087/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create lesson",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"a1qwp1\",\n    \"title\":\"ap\",\n    \"description\":\"apDesc\",\n    \"course_id\": \"a1qwp\",\n    \"author_id\": \"Donna\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8087/sections",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8087",
+					"path": [
+						"sections"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
