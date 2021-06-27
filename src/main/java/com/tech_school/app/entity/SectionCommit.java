@@ -11,6 +11,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @Entity(name = "section_commits")
 public class SectionCommit extends CommonEntities {
     @Column(nullable = false, name = "external_id")

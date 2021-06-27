@@ -41,12 +41,11 @@ public class SectionServiceImpl implements SectionService {
     CommitValidator commitValidator;
 
 
-
     @Autowired
     public SectionServiceImpl(SectionsMasterRepository sectionsMasterRepository, SectionCommitRepository sectionCommitRepository,
                               SectionMapper mapper, SectionValidator validator,
-                              CommitMapper commitMapper, CommitValidator commitValidator,CourseMapper courseMapper,
-                              CoursesMasterRepository coursesMasterRepository,CourseCommitRepository courseCommitRepository){
+                              CommitMapper commitMapper, CommitValidator commitValidator, CourseMapper courseMapper,
+                              CoursesMasterRepository coursesMasterRepository, CourseCommitRepository courseCommitRepository) {
         this.sectionsMasterRepository = sectionsMasterRepository;
         this.sectionCommitRepository = sectionCommitRepository;
         this.mapper = mapper;
@@ -68,17 +67,18 @@ public class SectionServiceImpl implements SectionService {
         return Optional.of(sectionCommitRepository.save(sectionCommit));
     }
 
-    private String getCommitId(SectionCommit sectionCommit){
+    private String getCommitId(SectionCommit sectionCommit) {
         Commit draftCommitAvailableForAuthor = commitValidator.isDraftCommitAvailableForAuthor();
-        if(draftCommitAvailableForAuthor == null){
-            return commitMapper.createCommit(sectionCommit.getCourseId(), CommitStates.DRAFT,commitValidator.getAuthorsLastetMerge().getExternalId()).getExternalId();
+        if (draftCommitAvailableForAuthor == null) {
+            return commitMapper.createCommit(sectionCommit.getCourseId(), CommitStates.DRAFT, commitValidator.getAuthorsLastetMerge().getExternalId()).getExternalId();
         }
-            return draftCommitAvailableForAuthor.getExternalId();
+        return draftCommitAvailableForAuthor.getExternalId();
     }
 
-    private void createCourseDraft(SectionCommit sectionCommit){
-        if(validator.courseAvailableInDraftState(sectionCommit) == null){
-            CourseCommit courseDraftFromMaster = courseMapper.createCourseDraftFromMaster(sectionCommit, validator.availableCourse(sectionCommit).get());
+    private void createCourseDraft(SectionCommit sectionCommit) {
+        if (validator.courseAvailableInDraftState(sectionCommit) == null) {
+            CourseCommit courseDraftFromMaster = courseMapper.createCourseDraftFromMaster(sectionCommit,
+                    validator.availableCourse(sectionCommit).get());
             courseCommitRepository.save(courseDraftFromMaster);
         }
     }

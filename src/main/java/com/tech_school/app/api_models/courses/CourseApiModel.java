@@ -35,4 +35,7 @@ public class CourseApiModel extends ApiModel {
     @Valid
     private List<SectionApiModel> sections = null;
 
+//    static CourseApiModel createFrom(){
+//
+//    }
 }
