@@ -7,6 +7,7 @@ import com.tech_school.core.exceptions.handlers.CustomExceptionHandler;
 import org.springframework.http.ResponseEntity;
 //import org.springframework.security.core.context.SecurityContextHolder;
 //import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -34,7 +35,7 @@ public class ExceptionHandlerFilter extends OncePerRequestFilter {
             System.out.println(exp);
             throw exp;
         } finally {
-//            SecurityContextHolder.clearContext();
+            SecurityContextHolder.clearContext();
         }
     }
 
