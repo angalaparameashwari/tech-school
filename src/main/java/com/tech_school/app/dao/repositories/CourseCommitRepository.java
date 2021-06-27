@@ -15,6 +15,6 @@ import java.util.Optional;
 @Repository
 public interface CourseCommitRepository extends CrudRepository<CourseCommit, Long>, QuerydslPredicateExecutor<CourseCommit> {
     Optional<CourseCommit> findByExternalId(String handle);
-    Optional<CourseCommit> findByCourseIdAndCommit(String id, Commit commit);
-    Optional<CourseCommit> findByCommit(Commit commit);
+    Optional<CourseCommit> findByCourseIdAndCommitId(String id, String commitId);
+    Optional<CourseCommit> findByCommitId(String id);
 }

@@ -23,6 +23,8 @@ public class QSectionsMaster extends EntityPathBase<SectionsMaster> {
 
     public final StringPath commitId = createString("commitId");
 
+    public final StringPath courseId = createString("courseId");
+
     //inherited
     public final DateTimePath<java.util.Date> createdAt = _super.createdAt;
 

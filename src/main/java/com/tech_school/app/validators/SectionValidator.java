@@ -47,7 +47,7 @@ public class SectionValidator {
     }
 
     public CourseCommit courseAvailableInDraftState(SectionCommit sectionCommit){
-        Optional<CourseCommit> byGivenIdAndAuthor = courseCommitRepository.findByCourseIdAndCommit(sectionCommit.getCourseId(),  commitValidator.getByCommit(sectionCommit.getCommitId()));
+        Optional<CourseCommit> byGivenIdAndAuthor = courseCommitRepository.findByCourseIdAndCommitId(sectionCommit.getCourseId(), sectionCommit.getCommitId());
         return byGivenIdAndAuthor.orElse(null);
     }
 

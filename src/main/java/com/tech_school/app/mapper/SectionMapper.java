@@ -1,14 +1,15 @@
 package com.tech_school.app.mapper;
 
+import com.tech_school.app.api_models.lessons.LessonApiModel;
 import com.tech_school.app.api_models.sections.CreateSectionApiModel;
 import com.tech_school.app.api_models.sections.SectionApiModel;
 import com.tech_school.app.dao.repositories.CommitRepository;
 import com.tech_school.app.entity.*;
 import com.tech_school.app.enums.ChangeType;
-import com.tech_school.app.enums.CommitStates;
 import com.tech_school.app.validators.SectionValidator;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -28,6 +29,17 @@ public class SectionMapper {
          apiModel.setDescription(sectionCommit.getDescription());
          apiModel.setTitle(sectionCommit.getTitle());
          return apiModel;
+    }
+
+
+    public SectionApiModel sectionsMasterToSectionApiModel(SectionsMaster sectionsMaster, List<LessonApiModel> lessonApiModelList){
+        SectionApiModel apiModel = new SectionApiModel();
+        apiModel.setId(sectionsMaster.getExternalId());
+        apiModel.setCourse_id(sectionsMaster.getCourseId());
+        apiModel.setDescription(sectionsMaster.getDescription());
+        apiModel.setTitle(sectionsMaster.getTitle());
+        apiModel.setLessons(lessonApiModelList);
+        return apiModel;
     }
 
     public SectionCommit createSectionToSectionCommit(CreateSectionApiModel createSectionApiModel){

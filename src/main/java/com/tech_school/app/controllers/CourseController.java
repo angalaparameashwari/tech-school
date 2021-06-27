@@ -38,12 +38,12 @@ public class CourseController implements CourseApi {
         };
     }
 
-//    @Override
-//    public Callable<ResponseEntity<CourseApiModel>> retrieve(String courseId, String authorId) {
-////        return () -> {
-////            RequestDetails.setCurrentUser("authorId");
-////            CourseApiModel courseApiModel = service.merge(courseId,authorId)
-////                    .map()
-////        }
-//    }
+    @Override
+    public Callable<ResponseEntity<CourseApiModel>> merge(String courseId, String authorId) {
+        return () -> {
+            RequestDetails.setCurrentUser("authorId");
+            CourseApiModel courseApiModel = service.merge(courseId,authorId).get();
+            return ResponseEntity.status(HttpStatus.ACCEPTED).body(courseApiModel);
+        };
+    }
 }

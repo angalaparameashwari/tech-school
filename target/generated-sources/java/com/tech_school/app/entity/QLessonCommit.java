@@ -21,9 +21,9 @@ public class QLessonCommit extends EntityPathBase<LessonCommit> {
 
     public final QCommonEntities _super = new QCommonEntities(this);
 
-    public final StringPath commit_id = createString("commit_id");
+    public final StringPath commitId = createString("commitId");
 
-    public final StringPath course_id = createString("course_id");
+    public final StringPath courseId = createString("courseId");
 
     //inherited
     public final DateTimePath<java.util.Date> createdAt = _super.createdAt;
@@ -40,9 +40,9 @@ public class QLessonCommit extends EntityPathBase<LessonCommit> {
 
     public final StringPath lessonId = createString("lessonId");
 
-    public final StringPath session_id = createString("session_id");
+    public final StringPath sectionId = createString("sectionId");
 
-    public final StringPath state = createString("state");
+    public final NumberPath<Integer> state = createNumber("state", Integer.class);
 
     public final StringPath title = createString("title");
 

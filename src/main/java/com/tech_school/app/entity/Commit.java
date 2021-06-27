@@ -23,7 +23,10 @@ public class Commit extends CommonEntities {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
     private Author author;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "course_id")
-    private CoursesMaster courseId;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "course_id")
+//    private CoursesMaster courseId;
+
+    @Column(nullable = false, name = "course_id")
+    private String courseId;
 }

@@ -21,7 +21,7 @@ public class QCourseCommit extends EntityPathBase<CourseCommit> {
 
     public final QCommonEntities _super = new QCommonEntities(this);
 
-    public final StringPath commit_id = createString("commit_id");
+    public final StringPath commitId = createString("commitId");
 
     public final StringPath courseId = createString("courseId");
 
@@ -37,6 +37,8 @@ public class QCourseCommit extends EntityPathBase<CourseCommit> {
 
     //inherited
     public final NumberPath<Long> id = _super.id;
+
+    public final StringPath name = createString("name");
 
     public final StringPath title = createString("title");
 

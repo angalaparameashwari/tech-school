@@ -1,5 +1,9 @@
 package com.tech_school.app.services.courses;
 
+import com.tech_school.app.api_models.courses.CourseApiModel;
+import com.tech_school.app.api_models.lessons.LessonApiModel;
+import com.tech_school.app.api_models.sections.SectionApiModel;
+import com.tech_school.app.controllers.SectionApi;
 import com.tech_school.app.dao.repositories.*;
 import com.tech_school.app.entity.*;
 import com.tech_school.app.enums.CommitStates;
@@ -15,10 +19,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.validation.Valid;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class CourseServiceImpl implements CourseService {
@@ -79,24 +81,38 @@ public class CourseServiceImpl implements CourseService {
         return Optional.of(coursesMasterRepository.save(courseMaster));
     }
 
-//    @Override
-//    public Optional<CoursesMaster> merge(@Valid String id, String authorId) {
-//        Author author = courseValidator.getAuthor();
-//        Optional<Commit> byStateAndAuthor = commitRepository.findByStateAndAuthor(CommitStates.DRAFT.status,author);
-//        if(!byStateAndAuthor.isPresent()){
-//            throw new GeneralException("nothing to merge");
-//        }
-//        fillCourseDetails(byStateAndAuthor);
-//        fillSections(byStateAndAuthor);
-//        fillLessons(byStateAndAuthor);
-//    }
+    @Override
+    public Optional<CourseApiModel> merge(@Valid String id, String authorId) {
+        Author author = courseValidator.getAuthor();
+        Optional<Commit> byStateAndAuthor = commitRepository.findByStateAndAuthor(CommitStates.DRAFT.status,author);
+        if(!byStateAndAuthor.isPresent()){
+            throw new GeneralException("nothing to merge");
+        }
+        CoursesMaster coursesMaster = fillCourseDetails(byStateAndAuthor);
+        List<SectionsMaster> sectionsMasters = fillSections(byStateAndAuthor);
+        List<LessonsMaster> lessonsMasters = fillLessons(byStateAndAuthor);
+        List<LessonApiModel> lessonApiModels = new ArrayList<>();
+        lessonsMasters.stream().forEach(lessonMaster -> {
+            lessonApiModels.add(lessonMapper.lessonCommitToLessonApiModel(lessonMaster));
+        });
+        List<SectionApiModel> sectionApiModels = new ArrayList<>();
+        sectionsMasters.stream().forEach(sectionsMaster -> {
+            sectionApiModels.add(sectionMapper.sectionsMasterToSectionApiModel(sectionsMaster,filterBasedOnSectionId(sectionsMaster.getExternalId(),lessonApiModels)));
+        });
+        return Optional.of(courseMapper.courseMasterToCourseApiModel(coursesMaster,sectionApiModels));
+    }
 
-    void fillLessons(Optional<Commit> byStateAndAuthor){
+    private List<LessonApiModel> filterBasedOnSectionId(String sectionId, List<LessonApiModel> lessonApiModels){
+        return lessonApiModels.stream().filter(lessonApiModel -> lessonApiModel.getSectionId().equals(sectionId)).collect(Collectors.toList());
+    }
+
+    List<LessonsMaster> fillLessons(Optional<Commit> byStateAndAuthor){
         Set<String> mergedSections = new HashSet<>();
+        List<LessonsMaster> lessonsMasters = new ArrayList<>();
         List<LessonCommit> lessonsByCommitId = lessonCommitRepository.findAllByCommitId(byStateAndAuthor.get().getExternalId());
         lessonsByCommitId.forEach(lessonCommit -> {
             LessonsMaster lessonsMaster = lessonMapper.lessonCommitToLessonMaster(lessonCommit);
-            lessonsMasterRepository.save(lessonsMaster);
+            lessonsMasters.add(lessonsMasterRepository.save(lessonsMaster));
             mergedSections.add(lessonsMaster.getExternalId());
         });
 
@@ -104,42 +120,45 @@ public class CourseServiceImpl implements CourseService {
         lessonsFromMaster.forEach(lessonsMaster -> {
             if(!mergedSections.contains(lessonsMaster.getExternalId())){
                 lessonsMaster.setCommitId(byStateAndAuthor.get().getExternalId());
-                lessonsMasterRepository.save(lessonsMaster);
+                lessonsMasters.add(lessonsMasterRepository.save(lessonsMaster));
             }
         });
+        return lessonsMasters;
     }
 
-    void fillCourseDetails(Optional<Commit> byStateAndAuthor){
-        Optional<CourseCommit> courseByCommitId = courseCommitRepository.findByCommit(byStateAndAuthor.get());
+    CoursesMaster fillCourseDetails(Optional<Commit> byStateAndAuthor){
+        Optional<CourseCommit> courseByCommitId = courseCommitRepository.findByCommitId(byStateAndAuthor.get().getExternalId());
         if(!courseByCommitId.isPresent()){
-            throw new GeneralException("Unexpected - unable for the course in drafts");
+            throw new GeneralException("Unexpected - unable to find drafts for this course");
         }
         CoursesMaster coursesMaster = courseMapper.courseCommitToCourseMaster(courseByCommitId.get(),byStateAndAuthor.get().getPreviousCommit());
-        coursesMasterRepository.save(coursesMaster);
+        return coursesMasterRepository.save(coursesMaster);
     }
 
 
-    void fillSections(Optional<Commit> byStateAndAuthor){
+    List<SectionsMaster> fillSections(Optional<Commit> byStateAndAuthor){
         Set<String> mergedSections = new HashSet<>();
-        fillSectionsFromCommits(byStateAndAuthor,mergedSections);
-        fillSectionsFromPreviousCommit(byStateAndAuthor,mergedSections);
+        List<SectionsMaster> sectionsMasters = new ArrayList<>();
+        fillSectionsFromCommits(byStateAndAuthor,mergedSections,sectionsMasters);
+        fillSectionsFromPreviousCommit(byStateAndAuthor,mergedSections,sectionsMasters);
+        return sectionsMasters;
     }
 
-    void fillSectionsFromCommits(Optional<Commit> byStateAndAuthor,Set<String> mergedSections){
+    void fillSectionsFromCommits(Optional<Commit> byStateAndAuthor,Set<String> mergedSections, List<SectionsMaster> sectionsMasters){
         List<SectionCommit> sectionsByCommitId = sectionCommitRepository.findAllByCommitId(byStateAndAuthor.get().getExternalId());
         sectionsByCommitId.forEach(sectionCommit -> {
             SectionsMaster sectionsMaster = sectionMapper.sectionCommitToSectionMaster(sectionCommit);
-            sectionsMasterRepository.save(sectionsMaster);
+            sectionsMasters.add(sectionsMasterRepository.save(sectionsMaster));
             mergedSections.add(sectionsMaster.getExternalId());
         });
     }
 
-    void fillSectionsFromPreviousCommit(Optional<Commit> byStateAndAuthor,Set<String> mergedSections){
+    void fillSectionsFromPreviousCommit(Optional<Commit> byStateAndAuthor,Set<String> mergedSections, List<SectionsMaster> sectionsMasters){
         List<SectionsMaster> sectionsFromMaster = sectionsMasterRepository.findAllByCommitId(byStateAndAuthor.get().getPreviousCommit());
         sectionsFromMaster.forEach(sectionsMaster -> {
             if(!mergedSections.contains(sectionsMaster.getExternalId())){
                 sectionsMaster.setCommitId(byStateAndAuthor.get().getExternalId());
-                sectionsMasterRepository.save(sectionsMaster);
+                sectionsMasters.add(sectionsMasterRepository.save(sectionsMaster));
             }
         });
     }

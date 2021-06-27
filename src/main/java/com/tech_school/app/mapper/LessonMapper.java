@@ -23,10 +23,24 @@ public class LessonMapper {
 
     public LessonApiModel lessonCommitToLessonApiModel(LessonCommit lessonCommit){
         LessonApiModel apiModel = new LessonApiModel();
-        apiModel.setId(lessonCommit.getSectionId());
+        apiModel.setId(lessonCommit.getLessonId());
         apiModel.setCourseId(lessonCommit.getCourseId());
+        apiModel.setSectionId(lessonCommit.getSectionId());
         apiModel.setDescription(lessonCommit.getDescription());
         apiModel.setTitle(lessonCommit.getTitle());
+        apiModel.setUrl(lessonCommit.getUrl());
+        apiModel.setType(lessonCommit.getType());
+        return apiModel;
+    }
+
+    public LessonApiModel lessonCommitToLessonApiModel(LessonsMaster lessonsMaster){
+        LessonApiModel apiModel = new LessonApiModel();
+        apiModel.setId(lessonsMaster.getExternalId());
+        apiModel.setSectionId(lessonsMaster.getSectionId());
+        apiModel.setDescription(lessonsMaster.getDescription());
+        apiModel.setTitle(lessonsMaster.getTitle());
+        apiModel.setUrl(lessonsMaster.getUrl());
+        apiModel.setType(lessonsMaster.getType());
         return apiModel;
     }
 

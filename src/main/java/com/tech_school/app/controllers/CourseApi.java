@@ -21,9 +21,9 @@ public interface CourseApi {
             method = RequestMethod.POST)
     Callable<ResponseEntity<CourseApiModel>> create(@Valid @RequestBody CreateCourseApiModel body);
 
-//    @RequestMapping(value = "/courses/{id}/merge/{authorId}",
-//            produces = {"application/json"},
-//            consumes = {"application/json"},
-//            method = RequestMethod.POST)
-//    Callable<ResponseEntity<CourseApiModel>> retrieve(@PathVariable("id") String courseId,@PathVariable("authorId") String authorId);
+    @RequestMapping(value = "/courses/{id}/merge/{authorId}",
+            produces = {"application/json"},
+            consumes = {"application/json"},
+            method = RequestMethod.POST)
+    Callable<ResponseEntity<CourseApiModel>> merge(@PathVariable("id") String courseId,@PathVariable("authorId") String authorId);
 }

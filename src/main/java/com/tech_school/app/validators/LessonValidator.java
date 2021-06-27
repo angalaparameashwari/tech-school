@@ -77,7 +77,7 @@ public class LessonValidator {
     }
 
     public CourseCommit courseAvailableInDraftState(LessonCommit lessonCommit){
-        Optional<CourseCommit> byGivenIdAndAuthor = courseCommitRepository.findByCourseIdAndCommit(lessonCommit.getCourseId(),commitValidator.getByCommit(lessonCommit.getCommitId()));
+        Optional<CourseCommit> byGivenIdAndAuthor = courseCommitRepository.findByCourseIdAndCommitId(lessonCommit.getCourseId(),lessonCommit.getCommitId());
         return byGivenIdAndAuthor.orElse(null);
     }
 }

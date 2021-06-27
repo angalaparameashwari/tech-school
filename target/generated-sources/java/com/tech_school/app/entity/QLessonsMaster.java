@@ -31,12 +31,12 @@ public class QLessonsMaster extends EntityPathBase<LessonsMaster> {
 
     public final StringPath description = createString("description");
 
-    public final StringPath external_id = createString("external_id");
+    public final StringPath externalId = createString("externalId");
 
     //inherited
     public final NumberPath<Long> id = _super.id;
 
-    public final StringPath section_id = createString("section_id");
+    public final StringPath sectionId = createString("sectionId");
 
     public final StringPath title = createString("title");
 

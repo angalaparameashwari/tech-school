@@ -18,7 +18,7 @@ public interface CommitRepository extends CrudRepository<Commit, Long>, Querydsl
 
     Optional<Commit> findByExternalId(String id);
 
-    Optional<Commit> findFirstByAuthorOrderByUpdatedAtDesc(Author author);
+    List<Commit> findFirstByAuthorOrderByUpdatedAtDesc(Author author);
 
     List<Commit> findByAuthorOrderByUpdatedAtDesc(Author author);
 

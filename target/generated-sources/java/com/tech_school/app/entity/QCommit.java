@@ -39,9 +39,7 @@ public class QCommit extends EntityPathBase<Commit> {
     //inherited
     public final NumberPath<Long> id = _super.id;
 
-    public final StringPath message = createString("message");
-
-    public final StringPath previous_commit = createString("previous_commit");
+    public final StringPath previousCommit = createString("previousCommit");
 
     public final NumberPath<Integer> state = createNumber("state", Integer.class);
 

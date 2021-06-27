@@ -6,6 +6,7 @@ import com.tech_school.app.entity.Commit;
 import com.tech_school.core.security.RequestDetails;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -24,11 +25,12 @@ public class CommitValidator {
    }
 
     public Commit getAuthorsLastetMerge(){
-        Optional<Commit> byState =commitRepository.findFirstByAuthorOrderByUpdatedAtDesc(authorRepository.findByExternalId(RequestDetails.getCurrentUser()).get());
-        return byState.orElse(null);
+        List<Commit> byState =commitRepository.findFirstByAuthorOrderByUpdatedAtDesc(authorRepository.findByExternalId(RequestDetails.getCurrentUser()).get());
+//        return byState.orElse(null);
+        return new Commit();
     }
 
-    public Commit getByCommit(String commitId){
+    public Commit getByCommitId(String commitId){
         Optional<Commit> byState =commitRepository.findByExternalId(commitId);
         return byState.orElse(null);
     }

@@ -23,7 +23,10 @@ public class CourseCommit extends CommonEntities {
     private String name;
     private String title;
     private String description;
+//    @Column(nullable = false, name = "commit_id")
+//    @OneToMany(mappedBy = "course_commits", cascade = CascadeType.ALL)
+//    private List<Commit> commits = new ArrayList<>();
+
     @Column(nullable = false, name = "commit_id")
-    @OneToMany(mappedBy = "course_commits", cascade = CascadeType.ALL)
-    private List<Commit> commits = new ArrayList<>();
+    private String commitId;
 }

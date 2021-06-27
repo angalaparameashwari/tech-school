@@ -2,10 +2,12 @@ package com.tech_school.app.mapper;
 
 import com.tech_school.app.api_models.courses.CourseApiModel;
 import com.tech_school.app.api_models.courses.CreateCourseApiModel;
-import com.tech_school.app.api_models.sections.CreateSectionApiModel;
+import com.tech_school.app.api_models.sections.SectionApiModel;
 import com.tech_school.app.entity.*;
 import com.tech_school.app.enums.CommitStates;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class CourseMapper {
@@ -25,6 +27,17 @@ public class CourseMapper {
         apiModel.setTitle(coursesMaster.getTitle());
         apiModel.setName(coursesMaster.getName());
         apiModel.setState(CommitStates.MERGED.name);
+        return apiModel;
+    }
+
+    public CourseApiModel courseMasterToCourseApiModel(CoursesMaster coursesMaster, List<SectionApiModel> sectionApiModels){
+        CourseApiModel apiModel = new CourseApiModel();
+        apiModel.setId(coursesMaster.getExternalId());
+        apiModel.setDescription(coursesMaster.getDescription());
+        apiModel.setTitle(coursesMaster.getTitle());
+        apiModel.setName(coursesMaster.getName());
+        apiModel.setState(CommitStates.MERGED.name);
+        apiModel.setSections(sectionApiModels);
         return apiModel;
     }
 
